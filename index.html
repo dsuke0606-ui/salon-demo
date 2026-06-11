@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAISON ROSE | 心斎橋のトータルビューティーサロン</title>
+    <meta name="description" content="心斎橋にあるトータルビューティーサロン MAISON ROSE。ヘア・ネイル・まつ毛を一度に。完全予約制のプライベートサロンです。">
+    <meta property="og:title" content="MAISON ROSE | 心斎橋のトータルビューティーサロン">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="tokens.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ink': '#111318', 'soft': '#6B7280', 'rose': '#8B4A4A',
+                    },
+                    fontFamily: {
+                        sans:    ['"Noto Sans JP"', 'sans-serif'],
+                        latin:   ['"DM Sans"', 'sans-serif'],
+                        display: ['"Cormorant Garamond"', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<header class="fixed top-0 left-0 w-full z-50"
+        style="background:rgba(255,255,255,0.94); backdrop-filter:blur(12px); border-bottom:1px solid var(--color-rule);">
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="index.html" class="nav-wordmark">MAISON ROSE<span class="accent-dot">.</span></a>
+        <ul class="hidden md:flex items-center gap-9">
+            <li><a href="#menu" class="nav-link">メニュー</a></li>
+            <li><a href="#about" class="nav-link">サロンについて</a></li>
+            <li><a href="#access" class="nav-link">アクセス</a></li>
+            <li>
+                <a href="#contact" class="btn-primary" style="padding:10px 22px; font-size:0.78rem;">
+                    ご予約・お問い合わせ
+                </a>
+            </li>
+        </ul>
+        <button class="md:hidden hamburger-btn" onclick="toggleMobileNav()" aria-label="メニュー">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <line x1="3" y1="6" x2="21" y2="6"/>
+                <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+        </button>
+    </nav>
+    <div id="mobile-nav" class="mobile-nav-drawer">
+        <ul class="px-6 py-5 flex flex-col gap-5">
+            <li><a href="#menu" class="nav-link" onclick="closeMobileNav()">メニュー</a></li>
+            <li><a href="#about" class="nav-link" onclick="closeMobileNav()">サロンについて</a></li>
+            <li><a href="#access" class="nav-link" onclick="closeMobileNav()">アクセス</a></li>
+            <li><a href="#contact" class="nav-link" onclick="closeMobileNav()">ご予約・お問い合わせ</a></li>
+        </ul>
+    </div>
+</header>
+
+
+<!-- ═══════════ HERO ═══════════ -->
+<section style="min-height:100svh; position:relative; display:flex; align-items:center; overflow:hidden;">
+    <!-- 背景画像 -->
+    <div style="position:absolute; inset:0; z-index:0;">
+        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=80"
+             alt="サロンの内観"
+             style="width:100%; height:100%; object-fit:cover; object-position:center;">
+        <div style="position:absolute; inset:0; background:linear-gradient(to right, oklch(14% 0.005 0 / 0.75) 0%, oklch(14% 0.005 0 / 0.35) 100%);"></div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 w-full" style="position:relative; z-index:1; padding-top:6rem;">
+        <div class="max-w-xl fade-in">
+            <p class="eyebrow mb-5" style="color:oklch(85% 0.04 10);">Total Beauty Salon — 心斎橋</p>
+            <h1 class="headline" style="font-size:clamp(2.8rem, 6vw, 5rem); color:#fff; line-height:1.1; margin-bottom:1.5rem;">
+                あなたらしい美しさを、<br>ここで。
+            </h1>
+            <p style="font-size:0.9rem; color:rgba(255,255,255,0.80); line-height:2.3; margin-bottom:2.5rem; font-family:var(--font-body);">
+                ヘア・ネイル・まつ毛を、一つのサロンで。<br>
+                完全予約制のプライベート空間で、<br>あなただけの時間をお過ごしください。
+            </p>
+            <div style="display:flex; flex-wrap:wrap; gap:12px;">
+                <a href="#contact" class="btn-primary" style="padding:14px 36px;">
+                    無料カウンセリングを予約
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#menu" class="btn-ghost" style="border-color:rgba(255,255,255,0.6); color:#fff; padding:14px 28px;">
+                    メニューを見る
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- スクロール指示 -->
+    <div style="position:absolute; bottom:2rem; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:6px; z-index:1;">
+        <p style="font-family:var(--font-ui); font-size:0.62rem; letter-spacing:0.18em; color:rgba(255,255,255,0.55); text-transform:uppercase;">Scroll</p>
+        <div style="width:1px; height:36px; background:linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);"></div>
+    </div>
+</section>
+
+
+<!-- ═══════════ FEATURES ═══════════ -->
+<section class="py-20 px-6" style="background:var(--color-paper-2);">
+    <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-px" style="border:1px solid var(--color-rule);">
+
+            <div class="fade-in" style="background:var(--color-paper); padding:40px 32px;">
+                <p class="eyebrow mb-4">Private</p>
+                <h3 class="headline mb-3" style="font-size:1.3rem;">完全個室・予約制</h3>
+                <p style="font-size:0.82rem; color:var(--color-muted); line-height:2.2;">他のお客様を気にせず、リラックスした時間を。お一人おひとりの施術に集中します。</p>
+            </div>
+
+            <div class="fade-in d1" style="background:var(--color-paper); padding:40px 32px; border-left:1px solid var(--color-rule); border-right:1px solid var(--color-rule);">
+                <p class="eyebrow mb-4">Total Care</p>
+                <h3 class="headline mb-3" style="font-size:1.3rem;">ヘア・ネイル・まつ毛</h3>
+                <p style="font-size:0.82rem; color:var(--color-muted); line-height:2.2;">一度の来店で全身トータルケアが可能。複数サロンを掛け持ちする手間がなくなります。</p>
+            </div>
+
+            <div class="fade-in d2" style="background:var(--color-paper); padding:40px 32px;">
+                <p class="eyebrow mb-4">Counseling</p>
+                <h3 class="headline mb-3" style="font-size:1.3rem;">丁寧なカウンセリング</h3>
+                <p style="font-size:0.82rem; color:var(--color-muted); line-height:2.2;">お悩みやご希望を丁寧にヒアリング。初めての方も安心してご来店いただけます。</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ═══════════ MENU ═══════════ -->
+<section id="menu" class="py-24 px-6" style="background:var(--color-paper);">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-14 fade-in">
+            <p class="eyebrow mb-4">Menu & Price</p>
+            <h2 class="headline" style="font-size:clamp(1.9rem, 3.8vw, 2.8rem);">メニュー・料金</h2>
+            <div style="height:1px; width:36px; background:var(--color-accent); margin:1.5rem auto 0;"></div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+
+            <!-- Hair -->
+            <div class="menu-card fade-in">
+                <div style="overflow:hidden; height:220px;">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&q=80"
+                         alt="ヘアメニュー" style="width:100%; height:100%; object-fit:cover; transition:transform 0.5s var(--ease-out);"
+                         onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div style="padding:28px 24px;">
+                    <p class="eyebrow mb-2">Hair</p>
+                    <h3 class="headline mb-3" style="font-size:1.25rem;">ヘアスタイリング</h3>
+                    <p style="font-size:0.8rem; color:var(--color-muted); line-height:2.1; margin-bottom:1.2rem;">
+                        カット・カラー・パーマ・縮毛矯正など。あなたの骨格・髪質に合わせたスタイルをご提案します。
+                    </p>
+                    <div style="border-top:1px solid var(--color-rule); padding-top:1rem;">
+                        <p style="font-size:0.72rem; color:var(--color-muted); margin-bottom:4px;">カット</p>
+                        <p class="headline" style="font-size:1.1rem;">¥5,500〜</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nail -->
+            <div class="menu-card fade-in d1">
+                <div style="overflow:hidden; height:220px;">
+                    <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=700&q=80"
+                         alt="ネイルメニュー" style="width:100%; height:100%; object-fit:cover; transition:transform 0.5s var(--ease-out);"
+                         onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div style="padding:28px 24px;">
+                    <p class="eyebrow mb-2">Nail</p>
+                    <h3 class="headline mb-3" style="font-size:1.25rem;">ネイルケア</h3>
+                    <p style="font-size:0.8rem; color:var(--color-muted); line-height:2.1; margin-bottom:1.2rem;">
+                        ジェルネイル・アート・ケアまで幅広く対応。季節やシーンに合わせたデザインをご用意しています。
+                    </p>
+                    <div style="border-top:1px solid var(--color-rule); padding-top:1rem;">
+                        <p style="font-size:0.72rem; color:var(--color-muted); margin-bottom:4px;">ジェルネイル（手）</p>
+                        <p class="headline" style="font-size:1.1rem;">¥8,800〜</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Eyelash -->
+            <div class="menu-card fade-in d2">
+                <div style="overflow:hidden; height:220px;">
+                    <img src="https://images.unsplash.com/photo-1583001931096-959e9a1a6223?auto=format&fit=crop&w=700&q=80"
+                         alt="まつ毛メニュー" style="width:100%; height:100%; object-fit:cover; transition:transform 0.5s var(--ease-out);"
+                         onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div style="padding:28px 24px;">
+                    <p class="eyebrow mb-2">Eyelash</p>
+                    <h3 class="headline mb-3" style="font-size:1.25rem;">まつ毛エクステ</h3>
+                    <p style="font-size:0.8rem; color:var(--color-muted); line-height:2.1; margin-bottom:1.2rem;">
+                        まつ毛エクステ・パーマ・リフトアップ。目元の印象を変えることで、毎朝のメイク時間を短縮できます。
+                    </p>
+                    <div style="border-top:1px solid var(--color-rule); padding-top:1rem;">
+                        <p style="font-size:0.72rem; color:var(--color-muted); margin-bottom:4px;">まつ毛エクステ（80本）</p>
+                        <p class="headline" style="font-size:1.1rem;">¥6,600〜</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p style="text-align:center; margin-top:2.5rem; font-size:0.75rem; color:var(--color-muted);">
+            ※ 料金はすべて税込みです。詳しくはカウンセリング時にご案内します。
+        </p>
+    </div>
+</section>
+
+
+<!-- ═══════════ ABOUT ═══════════ -->
+<section id="about" class="py-24 px-6" style="background:var(--color-paper-2);">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+
+        <div class="fade-in" style="order:2;">
+            <div style="overflow:hidden; aspect-ratio:4/5; max-width:480px;">
+                <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=800&q=80"
+                     alt="サロン内装" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+        </div>
+
+        <div class="fade-in d1" style="order:1;">
+            <p class="eyebrow mb-5">About</p>
+            <h2 class="headline mb-6" style="font-size:clamp(1.7rem, 3vw, 2.4rem);">
+                居心地のいい場所で、<br>あなたらしくいられる。
+            </h2>
+            <div style="height:1px; width:36px; background:var(--color-accent); margin-bottom:1.8rem;"></div>
+            <p style="font-size:0.88rem; color:var(--color-muted); line-height:2.6; margin-bottom:1.2rem;">
+                MAISON ROSE は、心斎橋にある完全予約制のトータルビューティーサロンです。
+            </p>
+            <p style="font-size:0.88rem; color:var(--color-muted); line-height:2.6; margin-bottom:1.2rem;">
+                「忙しい女性が、少ない時間で最大限きれいになれる場所」をコンセプトに、ヘア・ネイル・まつ毛を一度の来店でケアできる環境を整えています。
+            </p>
+            <p style="font-size:0.88rem; color:var(--color-muted); line-height:2.6;">
+                経験豊富なスタイリストが、お一人おひとりのライフスタイルに合わせた提案をいたします。
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ═══════════ VOICE ═══════════ -->
+<section class="py-24 px-6" style="background:var(--color-paper);">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-14 fade-in">
+            <p class="eyebrow mb-4">Voice</p>
+            <h2 class="headline" style="font-size:clamp(1.7rem, 3vw, 2.4rem);">お客様の声</h2>
+            <div style="height:1px; width:36px; background:var(--color-accent); margin:1.5rem auto 0;"></div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+
+            <div class="fade-in" style="border:1px solid var(--color-rule); padding:32px 28px;">
+                <p style="font-size:1.4rem; color:var(--color-accent); margin-bottom:12px; font-family:var(--font-display);">&#8220;</p>
+                <p style="font-size:0.84rem; color:#374151; line-height:2.4; margin-bottom:1.5rem;">
+                    完全個室なので、周りを気にせずゆっくりできました。スタイリストさんの提案がとても的確で、毎回お任せしています。
+                </p>
+                <p style="font-size:0.72rem; color:var(--color-muted); letter-spacing:0.06em;">30代 / 会社員</p>
+            </div>
+
+            <div class="fade-in d1" style="border:1px solid var(--color-rule); padding:32px 28px;">
+                <p style="font-size:1.4rem; color:var(--color-accent); margin-bottom:12px; font-family:var(--font-display);">&#8220;</p>
+                <p style="font-size:0.84rem; color:#374151; line-height:2.4; margin-bottom:1.5rem;">
+                    ネイルとまつ毛を同じ日にできるのが本当に助かります。忙しくてなかなか時間が取れない私にはぴったりのサロンです。
+                </p>
+                <p style="font-size:0.72rem; color:var(--color-muted); letter-spacing:0.06em;">20代 / 看護師</p>
+            </div>
+
+            <div class="fade-in d2" style="border:1px solid var(--color-rule); padding:32px 28px;">
+                <p style="font-size:1.4rem; color:var(--color-accent); margin-bottom:12px; font-family:var(--font-display);">&#8220;</p>
+                <p style="font-size:0.84rem; color:#374151; line-height:2.4; margin-bottom:1.5rem;">
+                    カウンセリングが丁寧で、初めてでも安心できました。希望通りの仕上がりで大満足です。また来ます！
+                </p>
+                <p style="font-size:0.72rem; color:var(--color-muted); letter-spacing:0.06em;">20代 / 学生</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ═══════════ ACCESS ═══════════ -->
+<section id="access" class="py-24 px-6" style="background:var(--color-paper-2);">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-start">
+
+        <div class="fade-in">
+            <p class="eyebrow mb-5">Access</p>
+            <h2 class="headline mb-8" style="font-size:clamp(1.7rem, 3vw, 2.2rem);">アクセス</h2>
+
+            <dl style="display:flex; flex-direction:column; gap:20px;">
+                <div style="display:flex; gap:20px; align-items:baseline; border-bottom:1px solid var(--color-rule); padding-bottom:16px;">
+                    <dt style="font-size:0.7rem; font-family:var(--font-ui); letter-spacing:0.12em; text-transform:uppercase; color:var(--color-accent); min-width:60px;">住所</dt>
+                    <dd style="font-size:0.88rem; color:#374151; line-height:1.8;">大阪府大阪市中央区心斎橋筋 1-○-○<br>○○ビル 3F</dd>
+                </div>
+                <div style="display:flex; gap:20px; align-items:baseline; border-bottom:1px solid var(--color-rule); padding-bottom:16px;">
+                    <dt style="font-size:0.7rem; font-family:var(--font-ui); letter-spacing:0.12em; text-transform:uppercase; color:var(--color-accent); min-width:60px;">最寄駅</dt>
+                    <dd style="font-size:0.88rem; color:#374151; line-height:1.8;">地下鉄御堂筋線「心斎橋駅」7番出口より徒歩3分</dd>
+                </div>
+                <div style="display:flex; gap:20px; align-items:baseline; border-bottom:1px solid var(--color-rule); padding-bottom:16px;">
+                    <dt style="font-size:0.7rem; font-family:var(--font-ui); letter-spacing:0.12em; text-transform:uppercase; color:var(--color-accent); min-width:60px;">営業時間</dt>
+                    <dd style="font-size:0.88rem; color:#374151; line-height:1.8;">10:00〜20:00（最終受付 19:00）</dd>
+                </div>
+                <div style="display:flex; gap:20px; align-items:baseline;">
+                    <dt style="font-size:0.7rem; font-family:var(--font-ui); letter-spacing:0.12em; text-transform:uppercase; color:var(--color-accent); min-width:60px;">定休日</dt>
+                    <dd style="font-size:0.88rem; color:#374151; line-height:1.8;">火曜日・第3水曜日</dd>
+                </div>
+            </dl>
+        </div>
+
+        <!-- マップ（プレースホルダー） -->
+        <div class="fade-in d1" style="aspect-ratio:4/3; background:oklch(93% 0.005 0); display:flex; align-items:center; justify-content:center; border:1px solid var(--color-rule);">
+            <p style="font-size:0.78rem; color:var(--color-muted); text-align:center; line-height:2;">
+                Google マップを<br>ここに埋め込みます
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ═══════════ CONTACT ═══════════ -->
+<section id="contact" class="py-24 px-6" style="background:var(--color-dark);">
+    <div class="max-w-2xl mx-auto text-center">
+        <div class="fade-in">
+            <p class="eyebrow mb-5" style="color:oklch(65% 0.09 10);">Reservation & Contact</p>
+            <h2 class="headline mb-5" style="font-size:clamp(1.8rem, 3.5vw, 2.5rem); color:#fff;">
+                ご予約・お問い合わせ
+            </h2>
+            <p style="font-size:0.88rem; color:rgba(255,255,255,0.65); line-height:2.3; margin-bottom:3rem; font-family:var(--font-body);">
+                初めてのご来店でも、まずはお気軽にご連絡ください。<br>
+                無料カウンセリングから承っています。
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4 fade-in d1">
+            <!-- LINE -->
+            <a href="#" style="display:flex; flex-direction:column; align-items:center; gap:10px; background:#06C755; color:#fff;
+                               padding:28px 20px; text-decoration:none; transition:background var(--dur-short);"
+               onmouseover="this.style.background='#05AD4A'" onmouseout="this.style.background='#06C755'">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 4.269 8.846 10.036 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975 1.742-1.907 2.547-3.842 2.547-5.968z"/>
+                </svg>
+                <span style="font-family:var(--font-body); font-size:0.88rem; letter-spacing:0.08em;">LINEで予約する</span>
+                <span style="font-size:0.7rem; opacity:0.8; font-family:var(--font-ui);">最短当日返信</span>
+            </a>
+
+            <!-- Tel -->
+            <a href="tel:00-0000-0000" style="display:flex; flex-direction:column; align-items:center; gap:10px;
+                               border:1.5px solid rgba(255,255,255,0.25); color:#fff;
+                               padding:28px 20px; text-decoration:none; transition:background var(--dur-short);"
+               onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='transparent'">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.08 6.08l1.17-.88a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                <span style="font-family:var(--font-display); font-size:1.2rem; font-weight:400; letter-spacing:0.06em;">00-0000-0000</span>
+                <span style="font-size:0.7rem; opacity:0.6; font-family:var(--font-ui);">10:00〜19:00（火曜定休）</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer style="background:oklch(10% 0.003 0); padding:2.5rem 1.5rem;">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        <a href="index.html" class="nav-wordmark" style="color:#fff; font-size:1.2rem;">MAISON ROSE<span class="accent-dot">.</span></a>
+        <nav class="hidden md:flex gap-8">
+            <a href="#menu" class="footer-link">メニュー</a>
+            <a href="#about" class="footer-link">サロンについて</a>
+            <a href="#access" class="footer-link">アクセス</a>
+            <a href="#contact" class="footer-link">ご予約</a>
+        </nav>
+        <p style="font-size:0.68rem; color:#374151; letter-spacing:0.08em;">© 2024 MAISON ROSE. All rights reserved.</p>
+    </div>
+</footer>
+
+
+<script>
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
+    setTimeout(() => {
+        document.querySelectorAll('section:first-of-type .fade-in').forEach(el => el.classList.add('visible'));
+    }, 100);
+
+    function toggleMobileNav() { document.getElementById('mobile-nav').classList.toggle('open'); }
+    function closeMobileNav() { document.getElementById('mobile-nav').classList.remove('open'); }
+</script>
+
+</body>
+</html>
